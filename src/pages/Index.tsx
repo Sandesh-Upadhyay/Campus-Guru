@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '@/components/Hero';
@@ -6,9 +5,24 @@ import ReviewCard from '@/components/ReviewCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, ArrowRight, GraduationCap, Building, MapPin, Users } from 'lucide-react';
+import { Search, ArrowRight, GraduationCap, Building, MapPin, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const Index = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { 
+      loop: true,
+      align: 'start',
+      containScroll: 'trimSnaps'
+    }, 
+    [Autoplay({ 
+      delay: 4000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true
+    })]
+  );
+
   const featuredColleges = [
     {
       name: 'Harvard University',
@@ -65,6 +79,30 @@ const Index = () => {
       rating: 5,
       review: "MIT set the gold standard for physics education. The coursework is challenging, but the collaborative atmosphere makes it manageable. Research opportunities abound, and I was able to work alongside Nobel laureates. The problem-solving skills I developed have been invaluable in my career.",
     },
+    {
+      name: 'Emma Thompson',
+      college: 'Yale University',
+      program: 'Political Science',
+      year: 'Class of 2023',
+      rating: 4,
+      review: "Yale's political science program is exceptional. The small class sizes allow for meaningful discussions, and the professors are incredibly knowledgeable. The opportunities for internships in Washington D.C. and connections with alumni in government are unmatched. The campus culture is intellectually stimulating.",
+    },
+    {
+      name: 'James Wilson',
+      college: 'Columbia University',
+      program: 'Business',
+      year: 'Class of 2022',
+      rating: 5,
+      review: "Columbia's business program in NYC is the perfect blend of theory and practice. The location in Manhattan provides incredible networking opportunities, and the professors bring real-world experience to the classroom. The alumni network is strong, and I secured my dream job through campus recruiting.",
+    },
+    {
+      name: 'Sarah Kim',
+      college: 'University of Chicago',
+      program: 'Economics',
+      year: 'Class of 2023',
+      rating: 4,
+      review: "UChicago's economics program is intellectually rigorous and challenging. The core curriculum is demanding but provides a solid foundation. The research opportunities are excellent, and the faculty members are leaders in their fields. The campus community is tight-knit and supportive.",
+    },
   ];
 
   const stats = [
@@ -99,16 +137,10 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/colleges"
-                  className="bg-white text-blue-700 hover:bg-blue-50 transition-colors px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
-                >
-                  Explore Colleges
-                </Link>
-                <Link 
                   to="/why-choose-us"
                   className="bg-blue-700 text-white hover:bg-blue-800 transition-colors border border-blue-200 px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
                 >
-                  Why Choose Us
+                Why Choose Us
                 </Link>
               </div>
             </div>
@@ -123,30 +155,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Search Bar Section - AdmissionShala style */}
-      <section className="py-8 bg-white shadow-md relative -mt-6 rounded-t-3xl">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-            <h2 className="text-2xl font-bold text-center mb-6">Find College Reviews</h2>
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-1 relative">
-                <Input
-                  placeholder="Search by college name"
-                  className="pl-10 py-6 rounded-full"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              </div>
-              <div>
-                <Button className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 py-6 px-8 rounded-full">
-                  Search
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Popular Categories - AdmissionShala style */}
       <section className="py-12 bg-gray-50">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-10">Popular Categories</h2>
@@ -172,13 +180,6 @@ const Index = () => {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-10">
             <h2 className="text-3xl font-bold">Featured Colleges</h2>
-            <Link 
-              to="/colleges"
-              className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
-            >
-              View All
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -276,33 +277,47 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Recent Reviews - AdmissionShala Style */}
+      {/* Recent Reviews - Carousel Style */}
       <section className="py-16 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-10">
             <h2 className="text-3xl font-bold">Recent Student Reviews</h2>
-            <Link 
-              to="/reviews"
-              className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
-            >
-              View All
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => emblaApi?.scrollPrev()}
+                className="rounded-full"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => emblaApi?.scrollNext()}
+                className="rounded-full"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentReviews.map((review, index) => (
-              <ReviewCard
-                key={review.name}
-                name={review.name}
-                college={review.college}
-                program={review.program}
-                year={review.year}
-                rating={review.rating}
-                review={review.review}
-                delay={`${index * 100}ms`}
-              />
-            ))}
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {recentReviews.map((review, index) => (
+                <div key={review.name} className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%]">
+                  <ReviewCard
+                    name={review.name}
+                    college={review.college}
+                    program={review.program}
+                    year={review.year}
+                    rating={review.rating}
+                    review={review.review}
+                    delay={`${index * 100}ms`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

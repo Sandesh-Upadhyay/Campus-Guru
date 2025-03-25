@@ -1,69 +1,69 @@
-# Welcome to your Lovable project
+# Campus Guru Project
 
-## Project info
+## Overview
+Campus Guru is a project designed to streamline and enhance the educational experience. This repository contains the source code for the project.
 
-**URL**: https://lovable.dev/projects/66122418-1dd4-4dfb-9aba-7f6f021418d0
 
-## How can I edit this code?
+## How to Set Up the Project
 
-There are several ways of editing your application.
+To get started with Campus Guru on your local machine, follow these steps:
 
-**Use Lovable**
+### Prerequisites
+- Install **Node.js** and **npm** (recommended: use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) for managing Node versions)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/66122418-1dd4-4dfb-9aba-7f6f021418d0) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Steps to Run Locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to the project folder
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Editing the Code
+You can modify the code using any of the following methods:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Using Your Preferred IDE
+- Clone the repo, make changes, and push updates.
+- Ensure all dependencies are installed before running the project.
 
-**Use GitHub Codespaces**
+### Directly on GitHub
+- Open the repository on GitHub.
+- Navigate to the file you want to edit.
+- Click the pencil icon, make changes, and commit.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### GitHub Codespaces
+- Open the repo on GitHub.
+- Click on the **Code** button and select **Codespaces**.
+- Create a new Codespace and edit files directly.
+- Commit and push changes when done.
 
-## What technologies are used for this project?
+## Tech Stack
+Campus Guru is built with:
 
-This project is built with .
+- **Vite** (for fast builds)
+- **TypeScript** (for type safety)
+- **React** (for UI components)
+- **shadcn-ui** (for styled components)
+- **Tailwind CSS** (for utility-first styling)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
+You can deploy the project using various methods:
 
-## How can I deploy this project?
+- **Campus Guru Platform**: Publish directly from the dashboard.
+- **Netlify**: For custom domain and external hosting.
 
-Simply open [Lovable](https://lovable.dev/projects/66122418-1dd4-4dfb-9aba-7f6f021418d0) and click on Share -> Publish.
+## Future Enhancements
+- Custom domain support
+- Additional UI improvements
+- API integrations
 
-## I want to use a custom domain - is that possible?
+Feel free to contribute or report issues!
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
