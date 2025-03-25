@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Search, Menu, X } from 'lucide-react';
+import { Search, Menu, X, Contact } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,38 +40,16 @@ const Navbar = () => {
             <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Home
             </Link>
-            <Link to="/colleges" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Colleges
-            </Link>
-            <Link to="/reviews" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Reviews
-            </Link>
-            <Link to="/rankings" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              Rankings
-            </Link>
             <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               About
             </Link>
-          </nav>
-
-          {/* Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="p-2 rounded-full hover:bg-secondary transition-colors" aria-label="Search">
-              <Search className="h-5 w-5 text-foreground" />
-            </button>
             <Link 
-              to="/login" 
+              to="/contact" 
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Log in
+              Contact Us
             </Link>
-            <Link 
-              to="/signup" 
-              className="text-sm font-medium text-white bg-primary px-4 py-2 rounded-full hover:bg-primary/90 transition-colors"
-            >
-              Sign up
-            </Link>
-          </div>
+          </nav>
 
           {/* Mobile menu button */}
           <button 
@@ -101,49 +78,19 @@ const Navbar = () => {
               Home
             </Link>
             <Link 
-              to="/colleges" 
-              className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Colleges
-            </Link>
-            <Link 
-              to="/reviews" 
-              className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Reviews
-            </Link>
-            <Link 
-              to="/rankings" 
-              className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Rankings
-            </Link>
-            <Link 
               to="/about" 
               className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </Link>
-            <div className="pt-4 flex flex-col space-y-3">
-              <Link 
-                to="/login" 
-                className="text-center text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Log in
-              </Link>
-              <Link 
-                to="/signup" 
-                className="text-center text-base font-medium text-white bg-primary py-2 px-4 rounded-full hover:bg-primary/90 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sign up
-              </Link>
-            </div>
+            <Link 
+              to="/contact" 
+              className="block text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       )}

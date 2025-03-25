@@ -1,11 +1,58 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Mail, Phone, MapPin, Clock, MessageSquare, Check } from 'lucide-react';
 
-const WhyChooseUs = () => {
+const Contact = () => {
+  const contactInfo = [
+    {
+      icon: <Mail className="h-6 w-6 text-blue-600" />,
+      title: 'Email Us',
+      details: 'support@collegereview.com',
+      description: 'Get in touch with our support team',
+    },
+    {
+      icon: <Phone className="h-6 w-6 text-blue-600" />,
+      title: 'Call Us',
+      details: '+1 (555) 123-4567',
+      description: 'Mon-Fri, 9am-6pm EST',
+    },
+    {
+      icon: <MapPin className="h-6 w-6 text-blue-600" />,
+      title: 'Visit Us',
+      details: '123 Education Street',
+      description: 'New York, NY 10001',
+    },
+  ];
+
+  const officeLocations = [
+    {
+      city: 'New York',
+      address: '123 Education Street, NY 10001',
+      phone: '+1 (555) 123-4567',
+      hours: 'Mon-Fri: 9:00 AM - 6:00 PM',
+    },
+    {
+      city: 'San Francisco',
+      address: '456 Tech Avenue, CA 94105',
+      phone: '+1 (555) 987-6543',
+      hours: 'Mon-Fri: 9:00 AM - 6:00 PM',
+    },
+    {
+      city: 'Boston',
+      address: '789 College Road, MA 02108',
+      phone: '+1 (555) 456-7890',
+      hours: 'Mon-Fri: 9:00 AM - 6:00 PM',
+    },
+  ];
+
   return (
     <div className="py-16">
       {/* Purple Section with Logo Design and Characters */}
-      <div id="why-choose-us" className="relative bg-[#b384f6] rounded-xl overflow-hidden">
+      <div className="relative bg-[#b384f6] rounded-xl overflow-hidden">
         <div className="absolute top-0 right-0">
           <div className="bg-white/10 rounded-full w-48 h-48 -mr-24 -mt-24"></div>
         </div>
@@ -56,20 +103,12 @@ const WhyChooseUs = () => {
             </div>
             
             <div className="md:w-1/2 text-white">
-              {/* <div className="inline-block px-4 py-1.5 mb-6 text-sm font-medium rounded-full bg-white/20 text-white">
-                Why Choose Us
-              </div> */}
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                We Understand What Drives You
+                Get in Touch With Us
               </h2>
               <p className="text-lg mb-8 text-white/90">
-              It is not about how hard you work but it is about how smartly you manage your time, 
-              resources, mind, and efforts to work together for a better result.
-              </p>
-              <p className="text-lg mb-8 text-white/90">
-              In the present era, time is money, and to value your money and efforts, 
-              we bring forth admissionshala.com, an admission consultant in ____________. 
-              We are an extraordinarily selective digital platform fabricated specially for aspiring students to counsel,guide, and help in career mapping.
+                We're here to help you with any questions about colleges, reviews, or our platform. 
+                Our dedicated team is ready to assist you in making informed decisions about your educational journey.
               </p>
               
               <div className="space-y-4">
@@ -77,21 +116,21 @@ const WhyChooseUs = () => {
                   <div className="mr-3 mt-1 bg-white/20 rounded-full p-1">
                     <Check className="h-5 w-5 text-white" />
                   </div>
-                  <p className="text-lg text-white/90">Unbiased reviews from real students and alumni</p>
+                  <p className="text-lg text-white/90">24/7 Support Available</p>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="mr-3 mt-1 bg-white/20 rounded-full p-1">
                     <Check className="h-5 w-5 text-white" />
                   </div>
-                  <p className="text-lg text-white/90">Comprehensive insights about academics, campus life, and more</p>
+                  <p className="text-lg text-white/90">Expert Guidance for College Selection</p>
                 </div>
                 
                 <div className="flex items-start">
                   <div className="mr-3 mt-1 bg-white/20 rounded-full p-1">
                     <Check className="h-5 w-5 text-white" />
                   </div>
-                  <p className="text-lg text-white/90">Tools and resources to compare colleges and make informed decisions</p>
+                  <p className="text-lg text-white/90">Personalized Solutions for Your Needs</p>
                 </div>
               </div>
             </div>
@@ -99,13 +138,13 @@ const WhyChooseUs = () => {
         </div>
       </div>
       
-      {/* Review Form Section (AdmissionShala style) */}
+      {/* Contact Form Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Share Your College Experience</h2>
+            <h2 className="text-3xl font-bold mb-4">Send Us a Message</h2>
             <p className="text-lg text-gray-600">
-              Help future students make informed decisions by sharing your insights about your college
+              Fill out the form below and we'll get back to you as soon as possible
             </p>
           </div>
           
@@ -137,59 +176,39 @@ const WhyChooseUs = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="college" className="block text-sm font-medium text-gray-700 mb-1">
-                    College Name
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    Subject
                   </label>
                   <input
                     type="text"
-                    id="college"
+                    id="subject"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter college name"
+                    placeholder="Enter subject"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="program" className="block text-sm font-medium text-gray-700 mb-1">
-                    Program/Major
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
                   </label>
                   <input
-                    type="text"
-                    id="program"
+                    type="tel"
+                    id="phone"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter your program or major"
+                    placeholder="Enter your phone number"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="rating" className="block text-sm font-medium text-gray-700 mb-1">
-                  Overall Rating
-                </label>
-                <div className="flex items-center space-x-2">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <button
-                      key={star}
-                      type="button"
-                      aria-label={`Rate ${star} stars`}
-                      className="text-yellow-400 hover:text-yellow-500 focus:outline-none"
-                    >
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </button>
-                  ))}
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="review" className="block text-sm font-medium text-gray-700 mb-1">
-                  Your Review
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Your Message
                 </label>
                 <textarea
-                  id="review"
+                  id="message"
                   rows={5}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Share your experience at this college..."
+                  placeholder="How can we help you?"
                 ></textarea>
               </div>
               
@@ -198,7 +217,7 @@ const WhyChooseUs = () => {
                   type="submit"
                   className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  Submit Your Review
+                  Send Message
                 </button>
               </div>
             </form>
@@ -209,4 +228,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default Contact; 

@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-lg font-display font-bold text-foreground mb-4">
-              Campus<span className="text-primary">Review</span>
+              Campus<span className="text-primary">Guru</span>
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
               Helping students make informed decisions about their education through authentic reviews and comprehensive college information.
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © {new Date().getFullYear()} CampusReview. All rights reserved.
+              © {new Date().getFullYear()} CampusGuru. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link to="/privacy" className="text-xs text-muted-foreground hover:text-primary transition-colors">
