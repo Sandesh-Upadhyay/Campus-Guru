@@ -51,8 +51,8 @@ const Contact = () => {
 
   return (
     <div className="py-16">
-      {/* Blue Section with Logo Design and Characters */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl overflow-hidden">
+      {/* Purple Section with Logo Design and Characters */}
+      <div className="relative bg-[#b384f6] rounded-xl overflow-hidden">
         <div className="absolute top-0 right-0">
           <div className="bg-white/10 rounded-full w-48 h-48 -mr-24 -mt-24"></div>
         </div>
@@ -67,45 +67,35 @@ const Contact = () => {
                 <div className="w-full max-w-md mx-auto">
                   {/* N-shaped design with characters */}
                   <div className="relative">
-                    <div className="bg-gradient-to-br from-blue-100 to-blue-50 transform -rotate-12 w-full h-96 rounded-3xl shadow-xl">
+                    <div className="bg-white transform -rotate-12 w-full h-96 rounded-3xl shadow-xl">
                       <div className="absolute top-5 left-8">
-                        <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-36 h-36 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
-                          <img 
-                            src="/lovable-uploads/ab8539ca-5225-4545-a4c5-f13bb5025e3a.png" 
-                            alt="Character 1"
-                            className="w-32 h-32 object-cover rounded-full"
-                          />
-                        </div>
+                        <img 
+                          src="/lovable-uploads/ab8539ca-5225-4545-a4c5-f13bb5025e3a.png" 
+                          alt="Character 1"
+                          className="w-36 h-36 object-cover rounded-full"
+                        />
                       </div>
                       <div className="absolute top-5 right-8">
-                        <div className="bg-gradient-to-br from-blue-600 to-blue-700 w-36 h-36 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
-                          <img 
-                            src="/lovable-uploads/ab8539ca-5225-4545-a4c5-f13bb5025e3a.png" 
-                            alt="Character 2"
-                            className="w-32 h-32 object-cover rounded-full"
-                          />
-                        </div>
+                        <img 
+                          src="/lovable-uploads/ab8539ca-5225-4545-a4c5-f13bb5025e3a.png" 
+                          alt="Character 2"
+                          className="w-36 h-36 object-cover rounded-full"
+                        />
                       </div>
                       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-                        <div className="bg-gradient-to-br from-blue-400 to-blue-500 w-36 h-36 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
-                          <img 
-                            src="/lovable-uploads/ab8539ca-5225-4545-a4c5-f13bb5025e3a.png" 
-                            alt="Character 3"
-                            className="w-32 h-32 object-cover rounded-full"
-                          />
-                        </div>
+                        <img 
+                          src="/lovable-uploads/ab8539ca-5225-4545-a4c5-f13bb5025e3a.png" 
+                          alt="Character 3"
+                          className="w-36 h-36 object-cover rounded-full"
+                        />
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="flex space-x-2">
-                            <span className="w-2.5 h-2.5 bg-blue-300 rounded-full animate-pulse"></span>
-                            <span className="w-2.5 h-2.5 bg-blue-400 rounded-full animate-pulse delay-100"></span>
-                            <span className="w-2.5 h-2.5 bg-blue-500 rounded-full animate-pulse delay-200"></span>
+                          <div className="flex space-x-1">
+                            <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                           </div>
                         </div>
                       </div>
-                      {/* Add decorative elements */}
-                      <div className="absolute top-1/2 left-1/4 w-8 h-8 bg-blue-200 rounded-full opacity-20"></div>
-                      <div className="absolute bottom-1/4 right-1/3 w-6 h-6 bg-blue-300 rounded-full opacity-20"></div>
-                      <div className="absolute top-1/3 right-1/4 w-10 h-10 bg-blue-100 rounded-full opacity-20"></div>
                     </div>
                   </div>
                 </div>
@@ -158,7 +148,7 @@ const Contact = () => {
             </p>
           </div>
           
-          <div className="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg border border-blue-100 p-8 hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-xl shadow-md p-8">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -168,7 +158,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
-                    className="w-full p-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 backdrop-blur-sm"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -180,7 +170,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    className="w-full p-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 backdrop-blur-sm"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -192,7 +182,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="subject"
-                    className="w-full p-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 backdrop-blur-sm"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Enter subject"
                   />
                 </div>
@@ -204,7 +194,7 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full p-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 backdrop-blur-sm"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -217,7 +207,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows={5}
-                  className="w-full p-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 backdrop-blur-sm"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
@@ -225,7 +215,7 @@ const Contact = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
                   Send Message
                 </button>
